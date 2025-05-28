@@ -1,7 +1,7 @@
-part of libphonenumber_interop;
+part of '../interop/libphonenumber_interop.dart';
 
 @JS('ShortNumberInfo')
-class ShortNumberInfoJsImpl {
+extension type ShortNumberInfoJsImpl._(JSObject _) implements JSObject {
   @JS('getInstance')
   external static ShortNumberInfoJsImpl getInstance();
 
@@ -27,7 +27,7 @@ class ShortNumberInfoJsImpl {
   external int getExpectedCost(PhoneNumberJsImpl number);
 
   @JS('getSupportedRegions')
-  external List<String> getSupportedRegions();
+  external JSArray<JSString> getSupportedRegions();
 
   @JS('getExampleShortNumber')
   external String getExampleShortNumber(String regionCode);

@@ -1,7 +1,7 @@
-part of libphonenumber_interop;
+part of '../interop/libphonenumber_interop.dart';
 
 @JS('AsYouTypeFormatter')
-class AsYouTypeFormatterJsImpl {
+extension type AsYouTypeFormatterJsImpl._(JSObject _) implements JSObject {
   external AsYouTypeFormatterJsImpl(String regionCode);
 
   @JS('clear')

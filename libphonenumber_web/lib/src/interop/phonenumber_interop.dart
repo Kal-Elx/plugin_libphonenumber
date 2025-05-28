@@ -1,7 +1,7 @@
-part of libphonenumber_interop;
+part of '../interop/libphonenumber_interop.dart';
 
 @JS('PhoneNumber')
-class PhoneNumberJsImpl {
+extension type PhoneNumberJsImpl._(JSObject _) implements JSObject {
   @JS('getCountryCode')
   external int getCountryCode();
 

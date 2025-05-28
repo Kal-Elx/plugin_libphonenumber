@@ -1,7 +1,7 @@
 @JS('libphonenumber')
 library libphonenumber_interop;
 
-import 'package:js/js.dart';
+import 'dart:js_interop';
 import 'package:libphonenumber_web/src/interop/utils/stringbuffer.dart';
 
 part 'asyoutypeformatter_interop.dart';

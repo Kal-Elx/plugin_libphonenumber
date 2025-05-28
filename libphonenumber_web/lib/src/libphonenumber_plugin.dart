@@ -1,3 +1,4 @@
+import 'dart:js_interop';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:libphonenumber_platform_interface/libphonenumber_platform_interface.dart';
 import 'package:libphonenumber_web/src/interop/libphonenumber_interop.dart';
@@ -62,14 +63,13 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
   }
 
   @override
-  Future<String?> normalizePhoneNumber(
-      String phoneNumber, String isoCode, [PhoneNumberFormat format = PhoneNumberFormat.E164]) async {
+  Future<String?> normalizePhoneNumber(String phoneNumber, String isoCode,
+      [PhoneNumberFormat format = PhoneNumberFormat.E164]) async {
     PhoneNumberUtilJsImpl phoneUtilJsImpl = PhoneNumberUtilJsImpl.getInstance();
     PhoneNumberJsImpl phoneNumberJsImpl =
         phoneUtilJsImpl.parse(phoneNumber, isoCode.toUpperCase());
 
-    String normalized =
-        phoneUtilJsImpl.format(phoneNumberJsImpl, format.value);
+    String normalized = phoneUtilJsImpl.format(phoneNumberJsImpl, format.value);
 
     return normalized;
   }
@@ -80,7 +80,8 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
 
     final allCountries = phoneUtilJsImpl
         .getSupportedRegions()
-        .map<String>((e) => e as String)
+        .toDart
+        .map<String>((e) => e.toDart)
         .toList();
 
     return allCountries;

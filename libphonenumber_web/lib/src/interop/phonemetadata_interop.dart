@@ -1,7 +1,7 @@
-part of libphonenumber_interop;
+part of '../interop/libphonenumber_interop.dart';
 
 @JS('NumberFormat')
-class NumberFormatJsImpl {
+extension type NumberFormatJsImpl._(JSObject _) implements JSObject {
   @JS('getPattern')
   external String getPattern();
 
@@ -45,7 +45,7 @@ class NumberFormatJsImpl {
   external void addLeadingDigitsPattern(String value);
 
   @JS('leadingDigitsPatternArray')
-  external List<String> leadingDigitsPatternArray();
+  external JSArray<JSString> leadingDigitsPatternArray();
 
   @JS('hasLeadingDigitsPattern')
   external bool hasLeadingDigitsPattern();
@@ -112,7 +112,7 @@ class NumberFormatJsImpl {
 }
 
 @JS('PhoneNumberDesc')
-class PhoneNumberDescJsImpl {
+extension type PhoneNumberDescJsImpl._(JSObject _) implements JSObject {
   @JS('getNationalNumberPattern')
   external String getNationalNumberPattern();
 
@@ -141,7 +141,7 @@ class PhoneNumberDescJsImpl {
   external void addPossibleLength(int value);
 
   @JS('possibleLengthArray')
-  external List<int> possibleLengthArray();
+  external JSArray<JSNumber> possibleLengthArray();
 
   @JS('hasPossibleLength')
   external bool hasPossibleLength();
@@ -162,7 +162,7 @@ class PhoneNumberDescJsImpl {
   external void addPossibleLengthLocalOnly(int value);
 
   @JS('possibleLengthLocalOnlyArray')
-  external List<int> possibleLengthLocalOnlyArray();
+  external JSArray<JSNumber> possibleLengthLocalOnlyArray();
 
   @JS('hasPossibleLengthLocalOnly')
   external bool hasPossibleLengthLocalOnly();
@@ -193,7 +193,7 @@ class PhoneNumberDescJsImpl {
 }
 
 @JS('PhoneMetadata')
-class PhoneMetadataJsImpl {
+extension type PhoneMetadataJsImpl._(JSObject _) implements JSObject {
   @JS('getGeneralDesc')
   external PhoneNumberDescJsImpl getGeneralDesc();
 
@@ -672,7 +672,7 @@ class PhoneMetadataJsImpl {
   external void addNumberFormat(NumberFormatJsImpl value);
 
   @JS('numberFormatArray')
-  external List<NumberFormatJsImpl> numberFormatArray();
+  external JSArray<NumberFormatJsImpl> numberFormatArray();
 
   @JS('hasNumberFormat')
   external bool hasNumberFormat();
@@ -693,7 +693,7 @@ class PhoneMetadataJsImpl {
   external void addIntlNumberFormat(NumberFormatJsImpl value);
 
   @JS('intlNumberFormatArray')
-  external List<NumberFormatJsImpl> intlNumberFormatArray();
+  external JSArray<NumberFormatJsImpl> intlNumberFormatArray();
 
   @JS('hasIntlNumberFormat')
   external bool hasIntlNumberFormat();
@@ -760,7 +760,7 @@ class PhoneMetadataJsImpl {
 }
 
 @JS('PhoneMetadataCollection')
-class PhoneMetadataCollectionJsImpl {
+extension type PhoneMetadataCollectionJsImpl._(JSObject _) implements JSObject {
   @JS('getMetadata')
   external PhoneMetadataJsImpl getMetadata(int index);
 
@@ -771,7 +771,7 @@ class PhoneMetadataCollectionJsImpl {
   external void addMetadata(PhoneMetadataJsImpl value);
 
   @JS('metadataArray')
-  external List<PhoneMetadataJsImpl> metadataArray();
+  external JSArray<PhoneMetadataJsImpl> metadataArray();
 
   @JS('hasMetadata')
   external bool hasMetadata();

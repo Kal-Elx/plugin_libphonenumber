@@ -1,9 +1,7 @@
-part of libphonenumber_interop;
+part of '../interop/libphonenumber_interop.dart';
 
 @JS('PhoneNumberUtil')
-class PhoneNumberUtilJsImpl {
-  external PhoneNumberUtilJsImpl._();
-
+extension type PhoneNumberUtilJsImpl._(JSObject _) implements JSObject {
   @JS('getInstance')
   external static PhoneNumberUtilJsImpl getInstance();
 
@@ -35,13 +33,13 @@ class PhoneNumberUtilJsImpl {
   external String getCountryMobileToken(int countryCallingCode);
 
   @JS('getSupportedRegions')
-  external List<dynamic> getSupportedRegions();
+  external JSArray<JSString> getSupportedRegions();
 
   @JS('getSupportedGlobalNetworkCallingCodes')
-  external List<int> getSupportedGlobalNetworkCallingCodes();
+  external JSArray<JSNumber> getSupportedGlobalNetworkCallingCodes();
 
   @JS('getSupportedCallingCodes')
-  external List<int> getSupportedCallingCodes();
+  external JSArray<JSNumber> getSupportedCallingCodes();
 
   ///
   ///   * Type of phone numbers.
@@ -81,10 +79,11 @@ class PhoneNumberUtilJsImpl {
   ///
 
   @JS('getSupportedTypesForRegion')
-  external List<int> getSupportedTypesForRegion(String regionCode);
+  external JSArray<JSNumber> getSupportedTypesForRegion(String regionCode);
 
   @JS('getSupportedTypesForNonGeoEntity')
-  external List<int> getSupportedTypesForNonGeoEntity(String regionCode);
+  external JSArray<JSNumber> getSupportedTypesForNonGeoEntity(
+      String regionCode);
 
   @JS('formattingRuleHasFirstGroupOnly')
   external bool formattingRuleHasFirstGroupOnly(

@@ -3,18 +3,17 @@
 @JS()
 library stringbuffer;
 
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 @JS('StringBuffer')
-class StringBufferJsImpl {
-  external StringBufferJsImpl(dynamic optA1, [dynamic varArgs = '']);
+extension type StringBufferJsImpl._(JSObject _) implements JSObject {
+  external StringBufferJsImpl(JSAny? optA1, [JSAny? varArgs]);
 
   @JS('set')
-  external void set(dynamic s);
+  external void set(JSAny? s);
 
   @JS('append')
-  external StringBufferJsImpl append(
-      dynamic a1, dynamic optA2, dynamic varArgs);
+  external StringBufferJsImpl append(JSAny? a1, JSAny? optA2, JSAny? varArgs);
 
   @JS('clear')
   external void clear();
@@ -23,5 +22,5 @@ class StringBufferJsImpl {
   external int getLength();
 
   @JS('toString')
-  external String toString();
+  external String toStringJS();
 }

@@ -65,8 +65,8 @@ void main() {
   });
 
   test('TEST normalizePhoneNumber', () async {
-    final normalizedNumber =
-        await platform.normalizePhoneNumber('+2348080123456', 'NG', PhoneNumberFormat.E164);
+    final normalizedNumber = await platform.normalizePhoneNumber(
+        '+2348080123456', 'NG', PhoneNumberFormat.E164);
 
     expect(normalizedNumber, '+2348080123456');
   });
