@@ -1,111 +1,111 @@
-part of libphonenumber_interop;
+import 'dart:js_interop';
 
-@JS('PhoneNumber')
-class PhoneNumberJsImpl {
+@JS('libphonenumber.PhoneNumber')
+extension type PhoneNumberJsImpl._(JSObject _) implements JSObject {
   @JS('getCountryCode')
-  external int getCountryCode();
+  external JSNumber getCountryCode();
 
   @JS('getCountryCodeOrDefault')
-  external int getCountryCodeOrDefault();
+  external JSNumber getCountryCodeOrDefault();
 
   @JS('setCountryCode')
-  external void setCountryCode(int value);
+  external void setCountryCode(JSNumber value);
 
   @JS('hasCountryCode')
-  external bool hasCountryCode();
+  external JSBoolean hasCountryCode();
 
   @JS('countryCodeCount')
-  external int countryCodeCount();
+  external JSNumber countryCodeCount();
 
   @JS('clearCountryCode')
   external void clearCountryCode();
 
   @JS('getNationalNumber')
-  external int getNationalNumber();
+  external JSNumber getNationalNumber();
 
   @JS('getNationalNumberOrDefault')
-  external int getNationalNumberOrDefault();
+  external JSNumber getNationalNumberOrDefault();
 
   @JS('setNationalNumber')
-  external void setNationalNumber(int value);
+  external void setNationalNumber(JSNumber value);
 
   @JS('hasNationalNumber')
-  external bool hasNationalNumber();
+  external JSBoolean hasNationalNumber();
 
   @JS('nationalNumberCount')
-  external int nationalNumberCount();
+  external JSNumber nationalNumberCount();
 
   @JS('clearNationalNumber')
   external void clearNationalNumber();
 
   @JS('getExtension')
-  external String getExtension();
+  external JSString getExtension();
 
   @JS('getExtensionOrDefault')
-  external String getExtensionOrDefault();
+  external JSString getExtensionOrDefault();
 
   @JS('setExtension')
-  external void setExtension(String value);
+  external void setExtension(JSString value);
 
   @JS('hasExtension')
-  external bool hasExtension();
+  external JSBoolean hasExtension();
 
   @JS('extensionCount')
-  external int extensionCount();
+  external JSNumber extensionCount();
 
   @JS('clearExtension')
   external void clearExtension();
 
   @JS('getItalianLeadingZero')
-  external bool getItalianLeadingZero();
+  external JSBoolean getItalianLeadingZero();
 
   @JS('getItalianLeadingZeroOrDefault')
-  external bool getItalianLeadingZeroOrDefault();
+  external JSBoolean getItalianLeadingZeroOrDefault();
 
   @JS('setItalianLeadingZero')
-  external void setItalianLeadingZero(bool value);
+  external void setItalianLeadingZero(JSBoolean value);
 
   @JS('hasItalianLeadingZero')
-  external bool hasItalianLeadingZero();
+  external JSBoolean hasItalianLeadingZero();
 
   @JS('italianLeadingZeroCount')
-  external int italianLeadingZeroCount();
+  external JSNumber italianLeadingZeroCount();
 
   @JS('clearItalianLeadingZero')
   external void clearItalianLeadingZero();
 
   @JS('getNumberOfLeadingZeros')
-  external int getNumberOfLeadingZeros();
+  external JSNumber getNumberOfLeadingZeros();
 
   @JS('getNumberOfLeadingZerosOrDefault')
-  external int getNumberOfLeadingZerosOrDefault();
+  external JSNumber getNumberOfLeadingZerosOrDefault();
 
   @JS('setNumberOfLeadingZeros')
-  external void setNumberOfLeadingZeros(int value);
+  external void setNumberOfLeadingZeros(JSNumber value);
 
   @JS('hasNumberOfLeadingZeros')
-  external bool hasNumberOfLeadingZeros();
+  external JSBoolean hasNumberOfLeadingZeros();
 
   @JS('numberOfLeadingZerosCount')
-  external int numberOfLeadingZerosCount();
+  external JSNumber numberOfLeadingZerosCount();
 
   @JS('clearNumberOfLeadingZeros')
   external void clearNumberOfLeadingZeros();
 
   @JS('getRawInput')
-  external String getRawInput();
+  external JSString getRawInput();
 
   @JS('getRawInputOrDefault')
-  external String getRawInputOrDefault();
+  external JSString getRawInputOrDefault();
 
   @JS('setRawInput')
-  external void setRawInput(String value);
+  external void setRawInput(JSString value);
 
   @JS('hasRawInput')
-  external bool hasRawInput();
+  external JSBoolean hasRawInput();
 
   @JS('rawInputCount')
-  external int rawInputCount();
+  external JSNumber rawInputCount();
 
   @JS('clearRawInput')
   external void clearRawInput();
@@ -124,19 +124,19 @@ class PhoneNumberJsImpl {
   ///
 
   @JS('getCountryCodeSource')
-  external int getCountryCodeSource();
+  external JSNumber getCountryCodeSource();
 
   @JS('getCountryCodeSourceOrDefault')
-  external int getCountryCodeSourceOrDefault();
+  external JSNumber getCountryCodeSourceOrDefault();
 
   @JS('setCountryCodeSource')
-  external void setCountryCodeSource(int value);
+  external void setCountryCodeSource(JSNumber value);
 
   @JS('hasCountryCodeSource')
-  external bool hasCountryCodeSource();
+  external JSBoolean hasCountryCodeSource();
 
   @JS('countryCodeSourceCount')
-  external int countryCodeSourceCount();
+  external JSNumber countryCodeSourceCount();
 
   @JS('clearCountryCodeSource')
   external void clearCountryCodeSource();
@@ -144,19 +144,19 @@ class PhoneNumberJsImpl {
   // END
 
   @JS('getPreferredDomesticCarrierCode')
-  external String getPreferredDomesticCarrierCode();
+  external JSString getPreferredDomesticCarrierCode();
 
   @JS('getPreferredDomesticCarrierCodeOrDefault')
-  external String getPreferredDomesticCarrierCodeOrDefault();
+  external JSString getPreferredDomesticCarrierCodeOrDefault();
 
   @JS('setPreferredDomesticCarrierCode')
-  external void setPreferredDomesticCarrierCode(String value);
+  external void setPreferredDomesticCarrierCode(JSString value);
 
   @JS('hasPreferredDomesticCarrierCode')
-  external bool hasPreferredDomesticCarrierCode();
+  external JSBoolean hasPreferredDomesticCarrierCode();
 
   @JS('preferredDomesticCarrierCodeCount')
-  external int preferredDomesticCarrierCodeCount();
+  external JSNumber preferredDomesticCarrierCodeCount();
 
   @JS('clearPreferredDomesticCarrierCode')
   external void clearPreferredDomesticCarrierCode();

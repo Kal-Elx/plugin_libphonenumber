@@ -4,7 +4,7 @@ version: 0.3.2
 homepage: https://github.com/natintosh/plugin_libphonenumber.git
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.3.0 <4.0.0'
   flutter: ">=1.20.0"
 
 dependencies:
@@ -13,7 +13,6 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
 
-  js: ^0.6.7
   libphonenumber_platform_interface: ^0.4.2
 
 dev_dependencies:

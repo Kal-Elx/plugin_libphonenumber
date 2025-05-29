@@ -1,18 +1,18 @@
-part of libphonenumber_interop;
+import 'dart:js_interop';
 
-@JS('AsYouTypeFormatter')
-class AsYouTypeFormatterJsImpl {
+@JS('libphonenumber.AsYouTypeFormatter')
+extension type AsYouTypeFormatterJsImpl._(JSObject _) implements JSObject {
   external AsYouTypeFormatterJsImpl(String regionCode);
 
   @JS('clear')
   external void clear();
 
   @JS('inputDigit')
-  external String inputDigit(String nextChar);
+  external JSString inputDigit(JSString nextChar);
 
   @JS('inputDigitAndRememberPosition')
-  external String inputDigitAndRememberPosition(String nextChar);
+  external JSString inputDigitAndRememberPosition(JSString nextChar);
 
   @JS('getRememberedPosition')
-  external int getRememberedPosition();
+  external JSNumber getRememberedPosition();
 }

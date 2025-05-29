@@ -1,47 +1,49 @@
-part of libphonenumber_interop;
+import 'dart:js_interop';
+import './phonenumber_interop.dart'; // For PhoneNumberJsImpl
+import './phonemetadata_interop.dart'; // For PhoneMetadataJsImpl, NumberFormatJsImpl
+import './utils/stringbuffer.dart'; // For StringBufferJsImpl
 
-@JS('PhoneNumberUtil')
-class PhoneNumberUtilJsImpl {
-  external PhoneNumberUtilJsImpl._();
-
+@JS('libphonenumber.PhoneNumberUtil')
+extension type PhoneNumberUtilJsImpl._(JSObject _) implements JSObject {
   @JS('getInstance')
   external static PhoneNumberUtilJsImpl getInstance();
 
   @JS('extractPossibleNumber')
-  external String extractPossibleNumber(String number);
+  external JSString extractPossibleNumber(JSString number);
 
   @JS('isViablePhoneNumber')
-  external bool isViablePhoneNumber(String number);
+  external JSBoolean isViablePhoneNumber(JSString number);
 
   @JS('normalize')
-  external String normalize(String number);
+  external JSString normalize(JSString number);
 
   @JS('normalizeDigitsOnly')
-  external String normalizeDigitsOnly(String number);
+  external JSString normalizeDigitsOnly(JSString number);
 
   @JS('normalizeDiallableCharsOnly')
-  external String normalizeDiallableCharsOnly(String number);
+  external JSString normalizeDiallableCharsOnly(JSString number);
 
   @JS('convertAlphaCharactersInNumber')
-  external String convertAlphaCharactersInNumber(String number);
+  external JSString convertAlphaCharactersInNumber(JSString number);
 
   @JS('getLengthOfGeographicalAreaCode')
-  external int getLengthOfGeographicalAreaCode(PhoneNumberJsImpl number);
+  external JSNumber getLengthOfGeographicalAreaCode(PhoneNumberJsImpl number);
 
   @JS('getLengthOfNationalDestinationCode')
-  external int getLengthOfNationalDestinationCode(PhoneNumberJsImpl number);
+  external JSNumber getLengthOfNationalDestinationCode(
+      PhoneNumberJsImpl number);
 
   @JS('getCountryMobileToken')
-  external String getCountryMobileToken(int countryCallingCode);
+  external JSString getCountryMobileToken(JSNumber countryCallingCode);
 
   @JS('getSupportedRegions')
-  external List<dynamic> getSupportedRegions();
+  external JSArray getSupportedRegions();
 
   @JS('getSupportedGlobalNetworkCallingCodes')
-  external List<int> getSupportedGlobalNetworkCallingCodes();
+  external JSArray getSupportedGlobalNetworkCallingCodes();
 
   @JS('getSupportedCallingCodes')
-  external List<int> getSupportedCallingCodes();
+  external JSArray getSupportedCallingCodes();
 
   ///
   ///   * Type of phone numbers.
@@ -81,170 +83,169 @@ class PhoneNumberUtilJsImpl {
   ///
 
   @JS('getSupportedTypesForRegion')
-  external List<int> getSupportedTypesForRegion(String regionCode);
+  external JSArray getSupportedTypesForRegion(JSString regionCode);
 
   @JS('getSupportedTypesForNonGeoEntity')
-  external List<int> getSupportedTypesForNonGeoEntity(String regionCode);
+  external JSArray getSupportedTypesForNonGeoEntity(JSString regionCode);
 
   @JS('formattingRuleHasFirstGroupOnly')
-  external bool formattingRuleHasFirstGroupOnly(
-      String nationalPrefixFormattingRule);
+  external JSBoolean formattingRuleHasFirstGroupOnly(
+      JSString nationalPrefixFormattingRule);
 
   @JS('isNumberGeographical')
-  external bool isNumberGeographical(PhoneNumberJsImpl number);
+  external JSBoolean isNumberGeographical(PhoneNumberJsImpl number);
 
   @JS('format')
-  external String format(PhoneNumberJsImpl number, int numberFormat);
+  external JSString format(PhoneNumberJsImpl number, JSNumber numberFormat);
 
   @JS('formatByPattern')
-  external String formatByPattern(PhoneNumberJsImpl number, int numberFormat,
-      NumberFormatJsImpl userDefineFormat);
+  external JSString formatByPattern(PhoneNumberJsImpl number,
+      JSNumber numberFormat, NumberFormatJsImpl userDefineFormat);
 
   @JS('formatNationalNumberWithCarrierCode')
-  external String formatNationalNumberWithCarrierCode(
-      PhoneNumberJsImpl number, String carrierCode);
+  external JSString formatNationalNumberWithCarrierCode(
+      PhoneNumberJsImpl number, JSString carrierCode);
 
   @JS('formatNationalNumberWithPreferredCarrierCode')
-  external String formatNationalNumberWithPreferredCarrierCode(
-      PhoneNumberJsImpl number, String fallbackCarrierCode);
+  external JSString formatNationalNumberWithPreferredCarrierCode(
+      PhoneNumberJsImpl number, JSString fallbackCarrierCode);
 
   @JS('formatNumberForMobileDialing')
-  external String formatNumberForMobileDialing(
-      PhoneNumberJsImpl number, String regionCallingFrom, bool withFormatting);
+  external JSString formatNumberForMobileDialing(PhoneNumberJsImpl number,
+      JSString regionCallingFrom, JSBoolean withFormatting);
 
   @JS('formatOutOfCountryCallingNumber')
-  external String formatOutOfCountryCallingNumber(
-      PhoneNumberJsImpl number, String regionCallingFrom);
+  external JSString formatOutOfCountryCallingNumber(
+      PhoneNumberJsImpl number, JSString regionCallingFrom);
 
   @JS('formatInOriginalFormat')
-  external String formatInOriginalFormat(
-      PhoneNumberJsImpl number, String regionCallingFrom);
+  external JSString formatInOriginalFormat(
+      PhoneNumberJsImpl number, JSString regionCallingFrom);
 
   @JS('formatOutOfCountryKeepingAlphaChars')
-  external String formatOutOfCountryKeepingAlphaChars(
-      PhoneNumberJsImpl number, String regionCallingFrom);
+  external JSString formatOutOfCountryKeepingAlphaChars(
+      PhoneNumberJsImpl number, JSString regionCallingFrom);
 
   @JS('getNationalSignificantNumber')
-  external String getNationalSignificantNumber(PhoneNumberJsImpl number);
+  external JSString getNationalSignificantNumber(PhoneNumberJsImpl number);
 
   @JS('getExampleNumber')
-  external PhoneNumberJsImpl getExampleNumber(String regionCode);
+  external PhoneNumberJsImpl getExampleNumber(JSString regionCode);
 
   @JS('getExampleNumberForType')
   external PhoneNumberJsImpl getExampleNumberForType(
-      String regionCode, int type);
+      JSString regionCode, JSNumber type);
 
   @JS('getExampleNumberForNonGeoEntity')
   external PhoneNumberJsImpl getExampleNumberForNonGeoEntity(
-      int countryCallingCode);
+      JSNumber countryCallingCode);
 
   @JS('getNumberType')
-  external int getNumberType(PhoneNumberJsImpl number);
+  external JSNumber getNumberType(PhoneNumberJsImpl number);
 
   @JS('getMetadataForRegion')
-  external PhoneMetadataJsImpl getMetadataForRegion(String regionCode);
+  external PhoneMetadataJsImpl getMetadataForRegion(JSString regionCode);
 
   @JS('getMetadataForNonGeographicalRegion')
   external PhoneMetadataJsImpl getMetadataForNonGeographicalRegion(
-      int countryCallingCode);
+      JSNumber countryCallingCode);
 
   @JS('isValidNumber')
-  external bool isValidNumber(PhoneNumberJsImpl number);
+  external JSBoolean isValidNumber(PhoneNumberJsImpl number);
 
   @JS('isValidNumberForRegion')
-  external bool isValidNumberForRegion(
-      PhoneNumberJsImpl number, String regionCode);
+  external JSBoolean isValidNumberForRegion(
+      PhoneNumberJsImpl number, JSString regionCode);
 
   @JS('getRegionCodeForNumber')
-  external String getRegionCodeForNumber(PhoneNumberJsImpl number);
+  external JSString getRegionCodeForNumber(PhoneNumberJsImpl number);
 
   @JS('getRegionCodeForCountryCode')
-  external String getRegionCodeForCountryCode(int countryCallingCode);
+  external JSString getRegionCodeForCountryCode(JSNumber countryCallingCode);
 
   @JS('getCountryCodeForRegion')
-  external int getCountryCodeForRegion(String regionCode);
+  external JSNumber getCountryCodeForRegion(JSString regionCode);
 
   @JS('getNddPrefixForRegion')
-  external String getNddPrefixForRegion(
-      String regionCode, bool stripeNonDigits);
+  external JSString getNddPrefixForRegion(
+      JSString regionCode, JSBoolean stripeNonDigits);
 
   @JS('isNANPACountry')
-  external bool isNANPACountry(String regionCode);
+  external JSBoolean isNANPACountry(JSString regionCode);
 
   @JS('isAlphaNumber')
-  external bool isAlphaNumber(String number);
+  external JSBoolean isAlphaNumber(JSString number);
 
   @JS('isPossibleNumber')
-  external bool isPossibleNumber(PhoneNumberJsImpl number);
+  external JSBoolean isPossibleNumber(PhoneNumberJsImpl number);
 
   @JS('isPossibleNumberForType')
-  external bool isPossibleNumberForType(PhoneNumberJsImpl number, int type);
+  external JSBoolean isPossibleNumberForType(
+      PhoneNumberJsImpl number, JSNumber type);
 
   @JS('isPossibleNumberWithReason')
-  external bool isPossibleNumberWithReason(PhoneNumberJsImpl number);
+  external JSBoolean isPossibleNumberWithReason(PhoneNumberJsImpl number);
 
   @JS('isPossibleNumberForTypeWithReason')
-  external bool isPossibleNumberForTypeWithReason(
-      PhoneNumberJsImpl number, int type);
+  external JSBoolean isPossibleNumberForTypeWithReason(
+      PhoneNumberJsImpl number, JSNumber type);
 
   @JS('isPossibleNumberString')
-  external bool isPossibleNumberString(
-      String number, String regionDialiingFrom);
+  external JSBoolean isPossibleNumberString(
+      JSString number, JSString regionDialiingFrom);
 
   @JS('truncateTooLongNumber')
-  external bool truncateTooLongNumber(PhoneNumberJsImpl number);
+  external JSBoolean truncateTooLongNumber(PhoneNumberJsImpl number);
 
   @JS('extractCountryCode')
-  external int extractCountryCode(
+  external JSNumber extractCountryCode(
       StringBufferJsImpl fullNumber, StringBufferJsImpl nationalNumber);
 
   @JS('maybeExtractCountryCode')
-  external int maybeExtractCountryCode(
-      String number,
+  external JSNumber maybeExtractCountryCode(
+      JSString number,
       PhoneMetadataJsImpl defaultRegionMetadata,
       StringBufferJsImpl nationalNumber,
-      bool keepRawInput,
+      JSBoolean keepRawInput,
       PhoneNumberJsImpl phoneNumber);
 
   @JS('maybeStripInternationalPrefixAndNormalize')
-  external int maybeStripInternationalPrefixAndNormalize(
-      StringBufferJsImpl number, String possibleIddPrefix);
+  external JSString maybeStripInternationalPrefixAndNormalize(
+      StringBufferJsImpl number, JSString possibleIddPrefix);
 
   @JS('maybeStripNationalPrefixAndCarrierCode')
-  external bool maybeStripNationalPrefixAndCarrierCode(
+  external JSBoolean maybeStripNationalPrefixAndCarrierCode(
       StringBufferJsImpl number,
       PhoneMetadataJsImpl metadata,
       StringBufferJsImpl carrierCode);
 
   @JS('maybeStripExtension')
-  external String maybeStripExtension(StringBufferJsImpl number);
+  external JSString maybeStripExtension(StringBufferJsImpl number);
 
   @JS('parse')
-  external PhoneNumberJsImpl parse(String numberToParse, String defaultRegion);
+  external PhoneNumberJsImpl parse(
+      JSString numberToParse, JSString defaultRegion);
 
   @JS('parseAndKeepRawInput')
   external PhoneNumberJsImpl parseAndKeepRawInput(
-      String numberToParse, String defaultRegion);
+      JSString numberToParse, JSString defaultRegion);
 
   @JS('isNumberMatch')
-  external int isNumberMatch(String firstNumberIn, String secondNumberIn);
-
-  @JS('isNumberMatch')
-  external int isPhoneNumberMatch(
+  external JSNumber isNumberMatch(
       PhoneNumberJsImpl firstNumberIn, PhoneNumberJsImpl secondNumberIn);
 
   @JS('canBeInternationallyDialled')
-  external bool canBeInternationallyDialled(PhoneNumberJsImpl number);
+  external JSBoolean canBeInternationallyDialled(PhoneNumberJsImpl number);
 
   /// TODO:
   ///
   /// Try this with regexp object from dart
   ///
   @JS('matchesEntirely')
-  external bool matchesEntirely(String regex, String str);
+  external JSBoolean matchesEntirely(JSString regex, JSString str);
 
   @JS('matchesPrefix')
-  external bool matchesPrefix(String regex, String str);
+  external JSBoolean matchesPrefix(JSString regex, JSString str);
 
   ///
   /// End of Regexp test

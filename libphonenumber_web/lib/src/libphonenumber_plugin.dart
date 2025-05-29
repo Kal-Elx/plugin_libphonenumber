@@ -1,3 +1,4 @@
+import 'dart:js_interop';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:libphonenumber_platform_interface/libphonenumber_platform_interface.dart';
 import 'package:libphonenumber_web/src/interop/libphonenumber_interop.dart';
@@ -14,7 +15,7 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
     String? result;
 
     for (int i = 0; i < phoneNumber.length; i++) {
-      result = phoneUtilJsImpl.inputDigit(phoneNumber[i]);
+      result = phoneUtilJsImpl.inputDigit(phoneNumber[i].toJS).toDart;
     }
 
     return result;
@@ -24,9 +25,9 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
   Future<int?> getNumberType(String phoneNumber, String isoCode) async {
     PhoneNumberUtilJsImpl phoneUtilJsImpl = PhoneNumberUtilJsImpl.getInstance();
     PhoneNumberJsImpl phoneNumberJsImpl =
-        phoneUtilJsImpl.parse(phoneNumber, isoCode.toUpperCase());
+        phoneUtilJsImpl.parse(phoneNumber.toJS, isoCode.toUpperCase().toJS);
 
-    int index = phoneUtilJsImpl.getNumberType(phoneNumberJsImpl);
+    int index = phoneUtilJsImpl.getNumberType(phoneNumberJsImpl).toDartInt;
 
     return index;
   }
@@ -36,13 +37,15 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
       String phoneNumber, String isoCode) async {
     PhoneNumberUtilJsImpl phoneUtilJsImpl = PhoneNumberUtilJsImpl.getInstance();
     PhoneNumberJsImpl phoneNumberJsImpl =
-        phoneUtilJsImpl.parse(phoneNumber, isoCode.toUpperCase());
+        phoneUtilJsImpl.parse(phoneNumber.toJS, isoCode.toUpperCase().toJS);
 
     String regionCode =
-        phoneUtilJsImpl.getRegionCodeForNumber(phoneNumberJsImpl);
-    String countryCode = phoneNumberJsImpl.getCountryCode().toString();
-    String formattedNumber = phoneUtilJsImpl.format(
-        phoneNumberJsImpl, PhoneNumberFormat.NATIONAL.value);
+        phoneUtilJsImpl.getRegionCodeForNumber(phoneNumberJsImpl).toDart;
+    String countryCode =
+        phoneNumberJsImpl.getCountryCode().toDartInt.toString();
+    String formattedNumber = phoneUtilJsImpl
+        .format(phoneNumberJsImpl, PhoneNumberFormat.NATIONAL.value.toJS)
+        .toDart;
 
     RegionInfo info = RegionInfo(
         regionPrefix: countryCode,
@@ -56,20 +59,20 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
   Future<bool?> isValidPhoneNumber(String phoneNumber, String isoCode) async {
     PhoneNumberUtilJsImpl phoneUtilJsImpl = PhoneNumberUtilJsImpl.getInstance();
     PhoneNumberJsImpl phoneNumberJsImpl =
-        phoneUtilJsImpl.parse(phoneNumber, isoCode.toUpperCase());
+        phoneUtilJsImpl.parse(phoneNumber.toJS, isoCode.toUpperCase().toJS);
 
-    return phoneUtilJsImpl.isValidNumber(phoneNumberJsImpl);
+    return phoneUtilJsImpl.isValidNumber(phoneNumberJsImpl).toDart;
   }
 
   @override
-  Future<String?> normalizePhoneNumber(
-      String phoneNumber, String isoCode, [PhoneNumberFormat format = PhoneNumberFormat.E164]) async {
+  Future<String?> normalizePhoneNumber(String phoneNumber, String isoCode,
+      [PhoneNumberFormat format = PhoneNumberFormat.E164]) async {
     PhoneNumberUtilJsImpl phoneUtilJsImpl = PhoneNumberUtilJsImpl.getInstance();
     PhoneNumberJsImpl phoneNumberJsImpl =
-        phoneUtilJsImpl.parse(phoneNumber, isoCode.toUpperCase());
+        phoneUtilJsImpl.parse(phoneNumber.toJS, isoCode.toUpperCase().toJS);
 
     String normalized =
-        phoneUtilJsImpl.format(phoneNumberJsImpl, format.value);
+        phoneUtilJsImpl.format(phoneNumberJsImpl, format.value.toJS).toDart;
 
     return normalized;
   }
@@ -78,10 +81,9 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
   Future<List<String>?> getAllCountries() async {
     PhoneNumberUtilJsImpl phoneUtilJsImpl = PhoneNumberUtilJsImpl.getInstance();
 
-    final allCountries = phoneUtilJsImpl
-        .getSupportedRegions()
-        .map<String>((e) => e as String)
-        .toList();
+    final JSArray jsArray = phoneUtilJsImpl.getSupportedRegions();
+    final List<String> allCountries =
+        jsArray.toDart.map((e) => (e as JSString).toDart).toList();
 
     return allCountries;
   }
@@ -95,14 +97,16 @@ class LibPhoneNumberPlugin extends LibPhoneNumberPlatform {
     PhoneNumberUtilJsImpl phoneUtilJsImpl = PhoneNumberUtilJsImpl.getInstance();
 
     PhoneNumberJsImpl exampleNumber = phoneUtilJsImpl.getExampleNumberForType(
-      isoCode,
-      type.value,
+      isoCode.toJS,
+      type.value.toJS,
     );
 
-    String formattedExampleNumber = phoneUtilJsImpl.format(
-      exampleNumber,
-      format.value,
-    );
+    String formattedExampleNumber = phoneUtilJsImpl
+        .format(
+          exampleNumber,
+          format.value.toJS,
+        )
+        .toDart;
 
     return formattedExampleNumber;
   }

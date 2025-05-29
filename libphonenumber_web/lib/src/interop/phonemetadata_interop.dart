@@ -1,199 +1,199 @@
-part of libphonenumber_interop;
+import 'dart:js_interop';
 
-@JS('NumberFormat')
-class NumberFormatJsImpl {
+@JS('libphonenumber.NumberFormat')
+extension type NumberFormatJsImpl._(JSObject _) implements JSObject {
   @JS('getPattern')
-  external String getPattern();
+  external JSString getPattern();
 
   @JS('getPatternOrDefault')
-  external String getPatternOrDefault();
+  external JSString getPatternOrDefault();
 
   @JS('setPattern')
-  external void setPattern(String value);
+  external void setPattern(JSString value);
 
   @JS('hasPattern')
-  external bool hasPattern();
+  external JSBoolean hasPattern();
 
   @JS('patternCount')
-  external int patternCount();
+  external JSNumber patternCount();
 
   @JS('clearPattern')
   external void clearPattern();
 
   @JS('getFormat')
-  external String getFormat();
+  external JSString getFormat();
 
   @JS('getFormatOrDefault')
-  external String getFormatOrDefault();
+  external JSString getFormatOrDefault();
 
   @JS('setFormat')
-  external void setFormat(String value);
+  external void setFormat(JSString value);
 
   @JS('hasFormat')
-  external bool hasFormat();
+  external JSBoolean hasFormat();
 
   @JS('formatCount')
-  external int formatCount();
+  external JSNumber formatCount();
 
   @JS('clearFormat')
   external void clearFormat();
 
   @JS('getLeadingDigitsPattern')
-  external String getLeadingDigitsPattern(int index);
+  external JSString getLeadingDigitsPattern(JSNumber index);
 
   @JS('addLeadingDigitsPattern')
-  external void addLeadingDigitsPattern(String value);
+  external void addLeadingDigitsPattern(JSString value);
 
   @JS('leadingDigitsPatternArray')
-  external List<String> leadingDigitsPatternArray();
+  external JSArray leadingDigitsPatternArray();
 
   @JS('hasLeadingDigitsPattern')
-  external bool hasLeadingDigitsPattern();
+  external JSBoolean hasLeadingDigitsPattern();
 
   @JS('leadingDigitsPatternCount')
-  external int leadingDigitsPatternCount();
+  external JSNumber leadingDigitsPatternCount();
 
   @JS('clearLeadingDigitsPattern')
   external void clearLeadingDigitsPattern();
 
   @JS('getNationalPrefixFormattingRule')
-  external String getNationalPrefixFormattingRule();
+  external JSString getNationalPrefixFormattingRule();
 
   @JS('getNationalPrefixFormattingRuleOrDefault')
-  external String getNationalPrefixFormattingRuleOrDefault();
+  external JSString getNationalPrefixFormattingRuleOrDefault();
 
   @JS('setNationalPrefixFormattingRule')
-  external void setNationalPrefixFormattingRule(String value);
+  external void setNationalPrefixFormattingRule(JSString value);
 
   @JS('hasNationalPrefixFormattingRule')
-  external bool hasNationalPrefixFormattingRule();
+  external JSBoolean hasNationalPrefixFormattingRule();
 
   @JS('nationalPrefixFormattingRuleCount')
-  external int nationalPrefixFormattingRuleCount();
+  external JSNumber nationalPrefixFormattingRuleCount();
 
   @JS('clearNationalPrefixFormattingRule')
   external void clearNationalPrefixFormattingRule();
 
   @JS('getNationalPrefixOptionalWhenFormatting')
-  external bool getNationalPrefixOptionalWhenFormatting();
+  external JSBoolean getNationalPrefixOptionalWhenFormatting();
 
   @JS('getNationalPrefixOptionalWhenFormattingOrDefault')
-  external bool getNationalPrefixOptionalWhenFormattingOrDefault();
+  external JSBoolean getNationalPrefixOptionalWhenFormattingOrDefault();
 
   @JS('setNationalPrefixOptionalWhenFormatting')
-  external void setNationalPrefixOptionalWhenFormatting(bool value);
+  external void setNationalPrefixOptionalWhenFormatting(JSBoolean value);
 
   @JS('hasNationalPrefixOptionalWhenFormatting')
-  external bool hasNationalPrefixOptionalWhenFormatting();
+  external JSBoolean hasNationalPrefixOptionalWhenFormatting();
 
   @JS('nationalPrefixOptionalWhenFormattingCount')
-  external int nationalPrefixOptionalWhenFormattingCount();
+  external JSNumber nationalPrefixOptionalWhenFormattingCount();
 
   @JS('clearNationalPrefixOptionalWhenFormatting')
   external void clearNationalPrefixOptionalWhenFormatting();
 
   @JS('getDomesticCarrierCodeFormattingRule')
-  external String getDomesticCarrierCodeFormattingRule();
+  external JSString getDomesticCarrierCodeFormattingRule();
 
   @JS('getDomesticCarrierCodeFormattingRuleOrDefault')
-  external String getDomesticCarrierCodeFormattingRuleOrDefault();
+  external JSString getDomesticCarrierCodeFormattingRuleOrDefault();
 
   @JS('setDomesticCarrierCodeFormattingRule')
-  external void setDomesticCarrierCodeFormattingRule(String value);
+  external void setDomesticCarrierCodeFormattingRule(JSString value);
 
   @JS('hasDomesticCarrierCodeFormattingRule')
-  external bool hasDomesticCarrierCodeFormattingRule();
+  external JSBoolean hasDomesticCarrierCodeFormattingRule();
 
   @JS('domesticCarrierCodeFormattingRuleCount')
-  external int domesticCarrierCodeFormattingRuleCount();
+  external JSNumber domesticCarrierCodeFormattingRuleCount();
 
   @JS('clearDomesticCarrierCodeFormattingRule')
   external void clearDomesticCarrierCodeFormattingRule();
 }
 
-@JS('PhoneNumberDesc')
-class PhoneNumberDescJsImpl {
+@JS('libphonenumber.PhoneNumberDesc')
+extension type PhoneNumberDescJsImpl._(JSObject _) implements JSObject {
   @JS('getNationalNumberPattern')
-  external String getNationalNumberPattern();
+  external JSString getNationalNumberPattern();
 
   @JS('getNationalNumberPatternOrDefault')
-  external String getNationalNumberPatternOrDefault();
+  external JSString getNationalNumberPatternOrDefault();
 
   @JS('setNationalNumberPattern')
-  external void setNationalNumberPattern(String value);
+  external void setNationalNumberPattern(JSString value);
 
   @JS('hasNationalNumberPattern')
-  external bool hasNationalNumberPattern();
+  external JSBoolean hasNationalNumberPattern();
 
   @JS('nationalNumberPatternCount')
-  external int nationalNumberPatternCount();
+  external JSNumber nationalNumberPatternCount();
 
   @JS('clearNationalNumberPattern')
   external void clearNationalNumberPattern();
 
   @JS('getPossibleLength')
-  external int getPossibleLength(int index);
+  external JSNumber getPossibleLength(JSNumber index);
 
   @JS('getPossibleLengthOrDefault')
-  external int getPossibleLengthOrDefault(int index);
+  external JSNumber getPossibleLengthOrDefault(JSNumber index);
 
   @JS('addPossibleLength')
-  external void addPossibleLength(int value);
+  external void addPossibleLength(JSNumber value);
 
   @JS('possibleLengthArray')
-  external List<int> possibleLengthArray();
+  external JSArray possibleLengthArray();
 
   @JS('hasPossibleLength')
-  external bool hasPossibleLength();
+  external JSBoolean hasPossibleLength();
 
   @JS('possibleLengthCount')
-  external int possibleLengthCount();
+  external JSNumber possibleLengthCount();
 
   @JS('clearPossibleLength')
   external void clearPossibleLength();
 
   @JS('getPossibleLengthLocalOnly')
-  external int getPossibleLengthLocalOnly(int index);
+  external JSNumber getPossibleLengthLocalOnly(JSNumber index);
 
   @JS('getPossibleLengthLocalOnlyOrDefault')
-  external int getPossibleLengthLocalOnlyOrDefault(int index);
+  external JSNumber getPossibleLengthLocalOnlyOrDefault(JSNumber index);
 
   @JS('addPossibleLengthLocalOnly')
-  external void addPossibleLengthLocalOnly(int value);
+  external void addPossibleLengthLocalOnly(JSNumber value);
 
   @JS('possibleLengthLocalOnlyArray')
-  external List<int> possibleLengthLocalOnlyArray();
+  external JSArray possibleLengthLocalOnlyArray();
 
   @JS('hasPossibleLengthLocalOnly')
-  external bool hasPossibleLengthLocalOnly();
+  external JSBoolean hasPossibleLengthLocalOnly();
 
   @JS('possibleLengthLocalOnlyCount')
-  external int possibleLengthLocalOnlyCount();
+  external JSNumber possibleLengthLocalOnlyCount();
 
   @JS('clearPossibleLengthLocalOnly')
   external void clearPossibleLengthLocalOnly();
 
   @JS('getExampleNumber')
-  external String getExampleNumber();
+  external JSString getExampleNumber();
 
   @JS('getExampleNumberOrDefault')
-  external String getExampleNumberOrDefault();
+  external JSString getExampleNumberOrDefault();
 
   @JS('setExampleNumber')
-  external void setExampleNumber(String value);
+  external void setExampleNumber(JSString value);
 
   @JS('hasExampleNumber')
-  external bool hasExampleNumber();
+  external JSBoolean hasExampleNumber();
 
   @JS('exampleNumberCount')
-  external int exampleNumberCount();
+  external JSNumber exampleNumberCount();
 
   @JS('clearExampleNumber')
   external void clearExampleNumber();
 }
 
-@JS('PhoneMetadata')
-class PhoneMetadataJsImpl {
+@JS('libphonenumber.PhoneMetadata')
+extension type PhoneMetadataJsImpl._(JSObject _) implements JSObject {
   @JS('getGeneralDesc')
   external PhoneNumberDescJsImpl getGeneralDesc();
 
@@ -204,10 +204,10 @@ class PhoneMetadataJsImpl {
   external void setGeneralDesc(PhoneNumberDescJsImpl value);
 
   @JS('hasGeneralDesc')
-  external bool hasGeneralDesc();
+  external JSBoolean hasGeneralDesc();
 
   @JS('generalDescCount')
-  external int generalDescCount();
+  external JSNumber generalDescCount();
 
   @JS('clearGeneralDesc')
   external void clearGeneralDesc();
@@ -222,10 +222,10 @@ class PhoneMetadataJsImpl {
   external void setFixedLine(PhoneNumberDescJsImpl value);
 
   @JS('hasFixedLine')
-  external bool hasFixedLine();
+  external JSBoolean hasFixedLine();
 
   @JS('fixedLineCount')
-  external int fixedLineCount();
+  external JSNumber fixedLineCount();
 
   @JS('clearFixedLine')
   external void clearFixedLine();
@@ -240,10 +240,10 @@ class PhoneMetadataJsImpl {
   external void setMobile(PhoneNumberDescJsImpl value);
 
   @JS('hasMobile')
-  external bool hasMobile();
+  external JSBoolean hasMobile();
 
   @JS('mobileCount')
-  external int mobileCount();
+  external JSNumber mobileCount();
 
   @JS('clearMobile')
   external void clearMobile();
@@ -258,10 +258,10 @@ class PhoneMetadataJsImpl {
   external void setTollFree(PhoneNumberDescJsImpl value);
 
   @JS('hasTollFree')
-  external bool hasTollFree();
+  external JSBoolean hasTollFree();
 
   @JS('tollFreeCount')
-  external int tollFreeCount();
+  external JSNumber tollFreeCount();
 
   @JS('clearTollFree')
   external void clearTollFree();
@@ -276,10 +276,10 @@ class PhoneMetadataJsImpl {
   external void setPremiumRate(PhoneNumberDescJsImpl value);
 
   @JS('hasPremiumRate')
-  external bool hasPremiumRate();
+  external JSBoolean hasPremiumRate();
 
   @JS('premiumRateCount')
-  external int premiumRateCount();
+  external JSNumber premiumRateCount();
 
   @JS('clearPremiumRate')
   external void clearPremiumRate();
@@ -294,10 +294,10 @@ class PhoneMetadataJsImpl {
   external void setSharedCost(PhoneNumberDescJsImpl value);
 
   @JS('hasSharedCost')
-  external bool hasSharedCost();
+  external JSBoolean hasSharedCost();
 
   @JS('sharedCostCount')
-  external int sharedCostCount();
+  external JSNumber sharedCostCount();
 
   @JS('clearSharedCost')
   external void clearSharedCost();
@@ -312,10 +312,10 @@ class PhoneMetadataJsImpl {
   external void setPersonalNumber(PhoneNumberDescJsImpl value);
 
   @JS('hasPersonalNumber')
-  external bool hasPersonalNumber();
+  external JSBoolean hasPersonalNumber();
 
   @JS('personalNumberCount')
-  external int personalNumberCount();
+  external JSNumber personalNumberCount();
 
   @JS('clearPersonalNumber')
   external void clearPersonalNumber();
@@ -330,10 +330,10 @@ class PhoneMetadataJsImpl {
   external void setVoip(PhoneNumberDescJsImpl value);
 
   @JS('hasVoip')
-  external bool hasVoip();
+  external JSBoolean hasVoip();
 
   @JS('voipCount')
-  external int voipCount();
+  external JSNumber voipCount();
 
   @JS('clearVoip')
   external void clearVoip();
@@ -348,10 +348,10 @@ class PhoneMetadataJsImpl {
   external void setPager(PhoneNumberDescJsImpl value);
 
   @JS('hasPager')
-  external bool hasPager();
+  external JSBoolean hasPager();
 
   @JS('pagerCount')
-  external int pagerCount();
+  external JSNumber pagerCount();
 
   @JS('clearPager')
   external void clearPager();
@@ -366,10 +366,10 @@ class PhoneMetadataJsImpl {
   external void setUan(PhoneNumberDescJsImpl value);
 
   @JS('hasUan')
-  external bool hasUan();
+  external JSBoolean hasUan();
 
   @JS('uanCount')
-  external int uanCount();
+  external JSNumber uanCount();
 
   @JS('clearUan')
   external void clearUan();
@@ -384,10 +384,10 @@ class PhoneMetadataJsImpl {
   external void setEmergency(PhoneNumberDescJsImpl value);
 
   @JS('hasEmergency')
-  external bool hasEmergency();
+  external JSBoolean hasEmergency();
 
   @JS('emergencyCount')
-  external int emergencyCount();
+  external JSNumber emergencyCount();
 
   @JS('clearEmergency')
   external void clearEmergency();
@@ -402,10 +402,10 @@ class PhoneMetadataJsImpl {
   external void setVoicemail(PhoneNumberDescJsImpl value);
 
   @JS('hasVoicemail')
-  external bool hasVoicemail();
+  external JSBoolean hasVoicemail();
 
   @JS('voicemailCount')
-  external int voicemailCount();
+  external JSNumber voicemailCount();
 
   @JS('clearVoicemail')
   external void clearVoicemail();
@@ -420,10 +420,10 @@ class PhoneMetadataJsImpl {
   external void setShortCode(PhoneNumberDescJsImpl value);
 
   @JS('hasShortCode')
-  external bool hasShortCode();
+  external JSBoolean hasShortCode();
 
   @JS('shortCodeCount')
-  external int shortCodeCount();
+  external JSNumber shortCodeCount();
 
   @JS('clearShortCode')
   external void clearShortCode();
@@ -438,10 +438,10 @@ class PhoneMetadataJsImpl {
   external void setStandardRate(PhoneNumberDescJsImpl value);
 
   @JS('hasStandardRate')
-  external bool hasStandardRate();
+  external JSBoolean hasStandardRate();
 
   @JS('standardRateCount')
-  external int standardRateCount();
+  external JSNumber standardRateCount();
 
   @JS('clearStandardRate')
   external void clearStandardRate();
@@ -456,10 +456,10 @@ class PhoneMetadataJsImpl {
   external void setCarrierSpecific(PhoneNumberDescJsImpl value);
 
   @JS('hasCarrierSpecific')
-  external bool hasCarrierSpecific();
+  external JSBoolean hasCarrierSpecific();
 
   @JS('carrierSpecificCount')
-  external int carrierSpecificCount();
+  external JSNumber carrierSpecificCount();
 
   @JS('clearCarrierSpecific')
   external void clearCarrierSpecific();
@@ -474,10 +474,10 @@ class PhoneMetadataJsImpl {
   external void setSmsServices(PhoneNumberDescJsImpl value);
 
   @JS('hasSmsServices')
-  external bool hasSmsServices();
+  external JSBoolean hasSmsServices();
 
   @JS('smsServicesCount')
-  external int smsServicesCount();
+  external JSNumber smsServicesCount();
 
   @JS('clearSmsServices')
   external void clearSmsServices();
@@ -492,10 +492,10 @@ class PhoneMetadataJsImpl {
   external void setNoInternationalDialling(PhoneNumberDescJsImpl value);
 
   @JS('hasNoInternationalDialling')
-  external bool hasNoInternationalDialling();
+  external JSBoolean hasNoInternationalDialling();
 
   @JS('noInternationalDiallingCount')
-  external int noInternationalDiallingCount();
+  external JSNumber noInternationalDiallingCount();
 
   @JS('clearNoInternationalDialling')
   external void clearNoInternationalDialling();
@@ -510,274 +510,274 @@ class PhoneMetadataJsImpl {
   external void setId(PhoneNumberDescJsImpl value);
 
   @JS('hasId')
-  external bool hasId();
+  external JSBoolean hasId();
 
   @JS('idCount')
-  external int idCount();
+  external JSNumber idCount();
 
   @JS('clearId')
   external void clearId();
 
   @JS('getCountryCode')
-  external int getCountryCode();
+  external JSNumber getCountryCode();
 
   @JS('getCountryCodeOrDefault')
-  external int getCountryCodeOrDefault();
+  external JSNumber getCountryCodeOrDefault();
 
   @JS('setCountryCode')
-  external void setCountryCode(int value);
+  external void setCountryCode(JSNumber value);
 
   @JS('hasCountryCode')
-  external bool hasCountryCode();
+  external JSBoolean hasCountryCode();
 
   @JS('countryCodeCount')
-  external int countryCodeCount();
+  external JSNumber countryCodeCount();
 
   @JS('clearCountryCode')
   external void clearCountryCode();
 
   @JS('getInternationalPrefix')
-  external String getInternationalPrefix();
+  external JSString getInternationalPrefix();
 
   @JS('getInternationalPrefixOrDefault')
-  external String getInternationalPrefixOrDefault();
+  external JSString getInternationalPrefixOrDefault();
 
   @JS('setInternationalPrefix')
-  external void setInternationalPrefix(String value);
+  external void setInternationalPrefix(JSString value);
 
   @JS('hasInternationalPrefix')
-  external bool hasInternationalPrefix();
+  external JSBoolean hasInternationalPrefix();
 
   @JS('internationalPrefixCount')
-  external int internationalPrefixCount();
+  external JSNumber internationalPrefixCount();
 
   @JS('clearInternationalPrefix')
   external void clearInternationalPrefix();
 
   @JS('getPreferredInternationalPrefix')
-  external String getPreferredInternationalPrefix();
+  external JSString getPreferredInternationalPrefix();
 
   @JS('getPreferredInternationalPrefixOrDefault')
-  external String getPreferredInternationalPrefixOrDefault();
+  external JSString getPreferredInternationalPrefixOrDefault();
 
   @JS('setPreferredInternationalPrefix')
-  external void setPreferredInternationalPrefix(String value);
+  external void setPreferredInternationalPrefix(JSString value);
 
   @JS('hasPreferredInternationalPrefix')
-  external bool hasPreferredInternationalPrefix();
+  external JSBoolean hasPreferredInternationalPrefix();
 
   @JS('preferredInternationalPrefixCount')
-  external int preferredInternationalPrefixCount();
+  external JSNumber preferredInternationalPrefixCount();
 
   @JS('clearPreferredInternationalPrefix')
   external void clearPreferredInternationalPrefix();
 
   @JS('getNationalPrefix')
-  external String getNationalPrefix();
+  external JSString getNationalPrefix();
 
   @JS('getNationalPrefixOrDefault')
-  external String getNationalPrefixOrDefault();
+  external JSString getNationalPrefixOrDefault();
 
   @JS('setNationalPrefix')
-  external void setNationalPrefix(String value);
+  external void setNationalPrefix(JSString value);
 
   @JS('hasNationalPrefix')
-  external bool hasNationalPrefix();
+  external JSBoolean hasNationalPrefix();
 
   @JS('nationalPrefixCount')
-  external int nationalPrefixCount();
+  external JSNumber nationalPrefixCount();
 
   @JS('clearNationalPrefix')
   external void clearNationalPrefix();
 
   @JS('getPreferredExtnPrefix')
-  external String getPreferredExtnPrefix();
+  external JSString getPreferredExtnPrefix();
 
   @JS('getPreferredExtnPrefixOrDefault')
-  external String getPreferredExtnPrefixOrDefault();
+  external JSString getPreferredExtnPrefixOrDefault();
 
   @JS('setPreferredExtnPrefix')
-  external void setPreferredExtnPrefix(String value);
+  external void setPreferredExtnPrefix(JSString value);
 
   @JS('hasPreferredExtnPrefix')
-  external bool hasPreferredExtnPrefix();
+  external JSBoolean hasPreferredExtnPrefix();
 
   @JS('preferredExtnPrefixCount')
-  external int preferredExtnPrefixCount();
+  external JSNumber preferredExtnPrefixCount();
 
   @JS('clearPreferredExtnPrefix')
   external void clearPreferredExtnPrefix();
 
   @JS('getNationalPrefixForParsing')
-  external String getNationalPrefixForParsing();
+  external JSString getNationalPrefixForParsing();
 
   @JS('getNationalPrefixForParsingOrDefault')
-  external String getNationalPrefixForParsingOrDefault();
+  external JSString getNationalPrefixForParsingOrDefault();
 
   @JS('setNationalPrefixForParsing')
-  external void setNationalPrefixForParsing(String value);
+  external void setNationalPrefixForParsing(JSString value);
 
   @JS('hasNationalPrefixForParsing')
-  external bool hasNationalPrefixForParsing();
+  external JSBoolean hasNationalPrefixForParsing();
 
   @JS('nationalPrefixForParsingCount')
-  external int nationalPrefixForParsingCount();
+  external JSNumber nationalPrefixForParsingCount();
 
   @JS('clearNationalPrefixForParsing')
   external void clearNationalPrefixForParsing();
 
   @JS('getNationalPrefixTransformRule')
-  external String getNationalPrefixTransformRule();
+  external JSString getNationalPrefixTransformRule();
 
   @JS('getNationalPrefixTransformRuleOrDefault')
-  external String getNationalPrefixTransformRuleOrDefault();
+  external JSString getNationalPrefixTransformRuleOrDefault();
 
   @JS('setNationalPrefixTransformRule')
-  external void setNationalPrefixTransformRule(String value);
+  external void setNationalPrefixTransformRule(JSString value);
 
   @JS('hasNationalPrefixTransformRule')
-  external bool hasNationalPrefixTransformRule();
+  external JSBoolean hasNationalPrefixTransformRule();
 
   @JS('nationalPrefixTransformRuleCount')
-  external int nationalPrefixTransformRuleCount();
+  external JSNumber nationalPrefixTransformRuleCount();
 
   @JS('clearNationalPrefixTransformRule')
   external void clearNationalPrefixTransformRule();
 
   @JS('getSameMobileAndFixedLinePattern')
-  external String getSameMobileAndFixedLinePattern();
+  external JSString getSameMobileAndFixedLinePattern();
 
   @JS('getSameMobileAndFixedLinePatternOrDefault')
-  external String getSameMobileAndFixedLinePatternOrDefault();
+  external JSString getSameMobileAndFixedLinePatternOrDefault();
 
   @JS('setSameMobileAndFixedLinePattern')
-  external void setSameMobileAndFixedLinePattern(String value);
+  external void setSameMobileAndFixedLinePattern(JSString value);
 
   @JS('hasSameMobileAndFixedLinePattern')
-  external bool hasSameMobileAndFixedLinePattern();
+  external JSBoolean hasSameMobileAndFixedLinePattern();
 
   @JS('sameMobileAndFixedLinePatternCount')
-  external int sameMobileAndFixedLinePatternCount();
+  external JSNumber sameMobileAndFixedLinePatternCount();
 
   @JS('clearSameMobileAndFixedLinePattern')
   external void clearSameMobileAndFixedLinePattern();
 
   @JS('getNumberFormat')
-  external int getNumberFormat(NumberFormatJsImpl index);
+  external JSNumber getNumberFormat(NumberFormatJsImpl index);
 
   @JS('getNumberFormatOrDefault')
-  external int getNumberFormatOrDefault(NumberFormatJsImpl index);
+  external JSNumber getNumberFormatOrDefault(NumberFormatJsImpl index);
 
   @JS('addNumberFormat')
   external void addNumberFormat(NumberFormatJsImpl value);
 
   @JS('numberFormatArray')
-  external List<NumberFormatJsImpl> numberFormatArray();
+  external JSArray numberFormatArray();
 
   @JS('hasNumberFormat')
-  external bool hasNumberFormat();
+  external JSBoolean hasNumberFormat();
 
   @JS('numberFormatCount')
-  external int numberFormatCount();
+  external JSNumber numberFormatCount();
 
   @JS('clearNumberFormat')
   external void clearNumberFormat();
 
   @JS('getIntlNumberFormat')
-  external int getIntlNumberFormat(NumberFormatJsImpl index);
+  external JSNumber getIntlNumberFormat(NumberFormatJsImpl index);
 
   @JS('getIntlNumberFormatOrDefault')
-  external int getIntlNumberFormatOrDefault(NumberFormatJsImpl index);
+  external JSNumber getIntlNumberFormatOrDefault(NumberFormatJsImpl index);
 
   @JS('addIntlNumberFormat')
   external void addIntlNumberFormat(NumberFormatJsImpl value);
 
   @JS('intlNumberFormatArray')
-  external List<NumberFormatJsImpl> intlNumberFormatArray();
+  external JSArray intlNumberFormatArray();
 
   @JS('hasIntlNumberFormat')
-  external bool hasIntlNumberFormat();
+  external JSBoolean hasIntlNumberFormat();
 
   @JS('intlNumberFormatCount')
-  external int intlNumberFormatCount();
+  external JSNumber intlNumberFormatCount();
 
   @JS('clearIntlNumberFormat')
   external void clearIntlNumberFormat();
 
   @JS('getMainCountryForCode')
-  external bool getMainCountryForCode();
+  external JSBoolean getMainCountryForCode();
 
   @JS('getMainCountryForCodeOrDefault')
-  external bool getMainCountryForCodeOrDefault();
+  external JSBoolean getMainCountryForCodeOrDefault();
 
   @JS('setMainCountryForCode')
-  external void setMainCountryForCode(bool value);
+  external void setMainCountryForCode(JSBoolean value);
 
   @JS('hasMainCountryForCode')
-  external bool hasMainCountryForCode();
+  external JSBoolean hasMainCountryForCode();
 
   @JS('mainCountryForCodeCount')
-  external int mainCountryForCodeCount();
+  external JSNumber mainCountryForCodeCount();
 
   @JS('clearMainCountryForCode')
   external void clearMainCountryForCode();
 
   @JS('getLeadingDigits')
-  external String getLeadingDigits();
+  external JSString getLeadingDigits();
 
   @JS('getLeadingDigitsOrDefault')
-  external String getLeadingDigitsOrDefault();
+  external JSString getLeadingDigitsOrDefault();
 
   @JS('setLeadingDigits')
-  external void setLeadingDigits(String value);
+  external void setLeadingDigits(JSString value);
 
   @JS('hasLeadingDigits')
-  external bool hasLeadingDigits();
+  external JSBoolean hasLeadingDigits();
 
   @JS('leadingDigitsCount')
-  external int leadingDigitsCount();
+  external JSNumber leadingDigitsCount();
 
   @JS('clearLeadingDigits')
   external void clearLeadingDigits();
 
   @JS('getLeadingZeroPossible')
-  external bool getLeadingZeroPossible();
+  external JSBoolean getLeadingZeroPossible();
 
   @JS('getLeadingZeroPossibleOrDefault')
-  external bool getLeadingZeroPossibleOrDefault();
+  external JSBoolean getLeadingZeroPossibleOrDefault();
 
   @JS('setLeadingZeroPossible')
-  external void setLeadingZeroPossible(bool value);
+  external void setLeadingZeroPossible(JSBoolean value);
 
   @JS('hasLeadingZeroPossible')
-  external bool hasLeadingZeroPossible();
+  external JSBoolean hasLeadingZeroPossible();
 
   @JS('leadingZeroPossibleCount')
-  external int leadingZeroPossibleCount();
+  external JSNumber leadingZeroPossibleCount();
 
   @JS('clearLeadingZeroPossible')
   external void clearLeadingZeroPossible();
 }
 
-@JS('PhoneMetadataCollection')
-class PhoneMetadataCollectionJsImpl {
+@JS('libphonenumber.PhoneMetadataCollection')
+extension type PhoneMetadataCollectionJsImpl._(JSObject _) implements JSObject {
   @JS('getMetadata')
-  external PhoneMetadataJsImpl getMetadata(int index);
+  external PhoneMetadataJsImpl getMetadata(JSNumber index);
 
   @JS('getMetadataOrDefault')
-  external PhoneMetadataJsImpl getLeadingZeroPossibleOrDefault(int index);
+  external PhoneMetadataJsImpl getMetadataOrDefault(JSNumber index);
 
   @JS('addMetadata')
   external void addMetadata(PhoneMetadataJsImpl value);
 
   @JS('metadataArray')
-  external List<PhoneMetadataJsImpl> metadataArray();
+  external JSArray metadataArray();
 
   @JS('hasMetadata')
-  external bool hasMetadata();
+  external JSBoolean hasMetadata();
 
   @JS('metadataCount')
-  external int metadataCount();
+  external JSNumber metadataCount();
 
   @JS('clearMetadata')
   external void clearMetadata();

@@ -1,54 +1,57 @@
-part of libphonenumber_interop;
+import 'dart:js_interop';
+import './phonenumber_interop.dart'; // For PhoneNumberJsImpl
 
-@JS('ShortNumberInfo')
-class ShortNumberInfoJsImpl {
+@JS('libphonenumber.ShortNumberInfo')
+extension type ShortNumberInfoJsImpl._(JSObject _) implements JSObject {
   @JS('getInstance')
   external static ShortNumberInfoJsImpl getInstance();
 
   @JS('isPossibleShortNumberForRegion')
-  external bool isPossibleShortNumberForRegion(
-      PhoneNumberJsImpl number, String regionDialingFrom);
+  external JSBoolean isPossibleShortNumberForRegion(
+      PhoneNumberJsImpl number, JSString regionDialingFrom);
 
   @JS('isPossibleShortNumber')
-  external bool isPossibleShortNumber(PhoneNumberJsImpl number);
+  external JSBoolean isPossibleShortNumber(PhoneNumberJsImpl number);
 
   @JS('isValidShortNumberForRegion')
-  external bool isValidShortNumberForRegion(
-      PhoneNumberJsImpl number, String regionDialingFrom);
+  external JSBoolean isValidShortNumberForRegion(
+      PhoneNumberJsImpl number, JSString regionDialingFrom);
 
   @JS('isValidShortNumber')
-  external bool isValidShortNumber(PhoneNumberJsImpl number);
+  external JSBoolean isValidShortNumber(PhoneNumberJsImpl number);
 
   @JS('getExpectedCostForRegion')
-  external int getExpectedCostForRegion(
-      PhoneNumberJsImpl number, String regionDialingFrom);
+  external JSNumber getExpectedCostForRegion(
+      PhoneNumberJsImpl number, JSString regionDialingFrom);
 
   @JS('getExpectedCost')
-  external int getExpectedCost(PhoneNumberJsImpl number);
+  external JSNumber getExpectedCost(PhoneNumberJsImpl number);
 
   @JS('getSupportedRegions')
-  external List<String> getSupportedRegions();
+  external JSArray getSupportedRegions();
 
   @JS('getExampleShortNumber')
-  external String getExampleShortNumber(String regionCode);
+  external JSString getExampleShortNumber(JSString regionCode);
 
   @JS('getExampleShortNumberForCost')
-  external String getExampleShortNumberForCost(String regionCode, int cost);
+  external JSString getExampleShortNumberForCost(
+      JSString regionCode, JSNumber cost);
 
   @JS('connectsToEmergencyNumber')
-  external bool connectsToEmergencyNumber(String number, String regionCode);
+  external JSBoolean connectsToEmergencyNumber(
+      JSString number, JSString regionCode);
 
   @JS('isEmergencyNumber')
-  external bool isEmergencyNumber(String number, String regionCode);
+  external JSBoolean isEmergencyNumber(JSString number, JSString regionCode);
 
   @JS('isCarrierSpecific')
-  external bool isCarrierSpecific(PhoneNumberJsImpl number);
+  external JSBoolean isCarrierSpecific(PhoneNumberJsImpl number);
 
   @JS('isCarrierSpecificForRegion')
-  external bool isCarrierSpecificForRegion(
-      PhoneNumberJsImpl number, String regionDialingFrom);
+  external JSBoolean isCarrierSpecificForRegion(
+      PhoneNumberJsImpl number, JSString regionDialingFrom);
 
   @JS('isSmsServiceForRegion')
-  external bool isSmsServiceForRegion(
-      PhoneNumberJsImpl number, String regionDialingFrom);
+  external JSBoolean isSmsServiceForRegion(
+      PhoneNumberJsImpl number, JSString regionDialingFrom);
 }
